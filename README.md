@@ -1,22 +1,17 @@
-# DrChoice
-
-> dr.choice project
-
-## Build Setup
-
+# DrChoice.IO
 ```bash
-# install dependencies
-$ npm install
+    ___          ___ _           _            _       
+   /   \_ __    / __\ |__   ___ (_) ___ ___  (_) ___  
+  / /\ / '__|  / /  | '_ \ / _ \| |/ __/ _ \ | |/ _ \ 
+ / /_//| |    / /___| | | | (_) | | (_|  __/_| | (_) |
+/___,' |_|    \____/|_| |_|\___/|_|\___\___(_)_|\___/ 
+```
+A tiny application that helps you making a choice. [https://drchoice.io](https://drchoice.io)
 
-# serve with hot reload at localhost:3000
-$ npm run dev
-
-# build for production and launch server
-$ npm run build
-$ npm run start
-
-# generate static project
-$ npm run generate
+## How to run (for development)
+```
+npm run dev
 ```
 
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+## Configurations
+TBD
