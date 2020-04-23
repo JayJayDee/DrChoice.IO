@@ -1,7 +1,7 @@
-import { Sequelize } from 'sequelize';
+const { Sequelize } = require('sequelize');
 
-import { cfgMandantory, cfgOptional } from '../configurator';
-import { logger } from '../logger';
+const { cfgMandantory, cfgOptional } = require('../configurator');
+const { logger } = require('../logger');
 
 const MYSQL_HOST = cfgMandantory('MYSQL_HOST');
 const MYSQL_USER = cfgMandantory('MYSQL_USER');
@@ -14,7 +14,7 @@ const log = logger({ tag: 'mysql-connector' });
 /**
  * initialize MySQL connection
  */
-export const initMySQLConnection =
+const initMySQLConnection =
   async () => {
     log.info(`establishing mysql connection ... host: ${MYSQL_HOST}`);
     const sequelize = new Sequelize({
@@ -29,3 +29,7 @@ export const initMySQLConnection =
     log.info('mysql connection ok!');
     return sequelize;
   };
+
+module.exports = {
+  initMySQLConnection
+};

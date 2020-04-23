@@ -1,10 +1,10 @@
-import moment from 'moment';
-import 'moment-timezone';
+const moment = require('moment');
+require('moment-timezone');
 
 const makeLog = (args, tag, subTag) =>
   [`${moment().tz('Asia/Seoul').format('YYYY-MM-DD hh:mm:ss')} [${tag}${subTag ? `/${subTag}` : ''}]`, ...args];
 
-export const logger =
+const logger =
   ({ tag, subTag }) =>
 
     ({
@@ -12,3 +12,7 @@ export const logger =
       info: (...args) => console.info(...makeLog(args, tag, subTag)),
       error: (...args) => console.error(...makeLog(args, tag, subTag))
     });
+
+module.exports = {
+  logger
+};

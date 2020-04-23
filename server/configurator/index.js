@@ -1,5 +1,5 @@
 
-export const cfgMandantory =
+const cfgMandantory =
   (key, source) => {
     const root = source ? source : process.env;
     if (!root[key]) {
@@ -8,7 +8,7 @@ export const cfgMandantory =
     return root[key];
   };
 
-export const cfgOptional =
+const cfgOptional =
   (key, defaultValue, source) => {
     const root = source ? source : process.env;
     if (!root[key] && defaultValue === undefined) {
@@ -18,3 +18,8 @@ export const cfgOptional =
     }
     return root[key];
   };
+
+module.exports = {
+  cfgMandantory,
+  cfgOptional
+};
