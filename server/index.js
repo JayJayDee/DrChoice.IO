@@ -5,6 +5,10 @@ const { Nuxt, Builder } = require('nuxt');
 
 const { initMySQLConnection } = require('./mysql');
 
+const {
+  presetRouter
+} = require('./handlers');
+
 const app = express();
 
 // Import and Set Nuxt.js options
@@ -28,6 +32,7 @@ config.dev = process.env.NODE_ENV !== 'production';
 
   // Give nuxt middleware to express
   app.use(nuxt.render);
+  app.use(presetRouter());
 
   // Listen the server
   app.listen(port, host);
